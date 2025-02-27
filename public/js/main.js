@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () =>
             method: 'POST',
             body: JSON.stringify(data)
         }).then((response) => {
-            if (response.redirected)
+            if (response.redirected){
                 alert("Регистрация завершена успешно!")
-            console.log(response.headers.get("URL"))
+                location.href = response.url
+            }
         })
     })
 );
